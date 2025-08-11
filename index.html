@@ -1010,6 +1010,57 @@
             background: #3375BB;
         }
 
+        /* Mobile Notice */
+        .mobile-notice {
+            background: linear-gradient(135deg, #FFF3CD 0%, #FFF8E1 100%);
+            border: 1px solid #FFE082;
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            margin-bottom: var(--space-lg);
+            animation: slideDown 0.3s ease-out;
+        }
+
+        [data-theme="dark"] .mobile-notice {
+            background: linear-gradient(135deg, rgba(255, 243, 205, 0.1) 0%, rgba(255, 248, 225, 0.1) 100%);
+            border-color: rgba(255, 224, 130, 0.3);
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .notice-content {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+        }
+
+        .notice-icon {
+            font-size: var(--font-size-2xl);
+            flex-shrink: 0;
+        }
+
+        .notice-text h4 {
+            color: var(--text-primary);
+            font-size: var(--font-size-md);
+            font-weight: 600;
+            margin-bottom: var(--space-xs);
+        }
+
+        .notice-text p {
+            color: var(--text-secondary);
+            font-size: var(--font-size-sm);
+            line-height: 1.4;
+            margin-bottom: 0;
+        }
+
         /* Toast Notifications */
         .toast {
             position: fixed;
@@ -1560,6 +1611,20 @@
                 <button class="close-btn" onclick="closeConnectModal()">&times;</button>
             </div>
             <div class="modal-body">
+                <!-- 모바일 안내 메시지 -->
+                <div id="mobileNotice" class="mobile-notice" style="display: none;">
+                    <div class="notice-content">
+                        <div class="notice-icon">📱</div>
+                        <div class="notice-text">
+                            <h4>모바일 사용자 안내</h4>
+                            <p>모바일에서는 메타마스크 앱의 내장 브라우저를 사용해주세요!</p>
+                            <button class="btn-primary" onclick="openInMetaMaskApp()" style="margin-top: 12px; font-size: 14px; padding: 8px 16px;">
+                                메타마스크 앱에서 열기
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="wallet-options">
                     <button class="wallet-option" onclick="connectMetaMask()">
                         <div class="wallet-icon metamask-icon">
@@ -1730,10 +1795,41 @@
             }
         }
 
+        // Mobile Detection
+        function isMobile() {
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        }
+
+        function isMetaMaskMobileApp() {
+            return navigator.userAgent.includes('MetaMaskMobile');
+        }
+
         // Wallet Connection
         async function connectMetaMask() {
             try {
-                if (typeof window.ethereum === 'undefined') {
+                // 모바일 환경 처리
+                if (isMobile() && !isMetaMaskMobileApp()) {
+                    if (typeof window.ethereum === 'undefined') {
+                        showToast('📱 모바일에서는 메타마스크 앱을 통해 접속해주세요!', 'warning');
+                        
+                        // 메타마스크 앱으로 딥링크 연결
+                        const currentUrl = encodeURIComponent(window.location.href);
+                        const metamaskDeepLink = `https://metamask.app.link/dapp/${window.location.hostname}${window.location.pathname}`;
+                        
+                        setTimeout(() => {
+                            window.open(metamaskDeepLink, '_blank');
+                        }, 1000);
+                        
+                        // 3초 후 추가 안내 메시지
+                        setTimeout(() => {
+                            showToast('메타마스크 앱에서 브라우저를 통해 이 사이트에 접속해주세요!', 'warning');
+                        }, 3000);
+                        return;
+                    }
+                }
+
+                // 데스크톱에서 메타마스크 미설치 시
+                if (!isMobile() && typeof window.ethereum === 'undefined') {
                     showToast('MetaMask not detected. Please install MetaMask extension.', 'error');
                     setTimeout(() => {
                         window.open('https://metamask.io/download/', '_blank');
@@ -1818,6 +1914,26 @@
         }
 
         async function connectTrustWallet() {
+            // 모바일에서 Trust Wallet 처리
+            if (isMobile()) {
+                if (typeof window.ethereum === 'undefined') {
+                    showToast('📱 Trust Wallet 앱을 통해 접속해주세요!', 'warning');
+                    
+                    const currentUrl = window.location.href;
+                    const trustWalletDeepLink = `https://link.trustwallet.com/open_url?coin_id=20000714&url=${encodeURIComponent(currentUrl)}`;
+                    
+                    setTimeout(() => {
+                        window.location.href = trustWalletDeepLink;
+                    }, 1000);
+                    
+                    setTimeout(() => {
+                        showToast('Trust Wallet 앱에서 브라우저를 통해 이 사이트에 접속해주세요!', 'warning');
+                    }, 3000);
+                    return;
+                }
+            }
+            
+            // 데스크톱 또는 인앱 브라우저에서는 MetaMask와 동일하게 처리
             await connectMetaMask();
         }
 
@@ -1951,6 +2067,15 @@
 
         function openConnectModal() {
             const modal = document.getElementById('connectModal');
+            const mobileNotice = document.getElementById('mobileNotice');
+            
+            // 모바일 환경이고 메타마스크 앱이 아닌 경우 안내 메시지 표시
+            if (isMobile() && !isMetaMaskMobileApp() && typeof window.ethereum === 'undefined') {
+                mobileNotice.style.display = 'block';
+            } else {
+                mobileNotice.style.display = 'none';
+            }
+            
             modal.classList.add('show');
             document.body.style.overflow = 'hidden';
         }
@@ -1959,6 +2084,23 @@
             const modal = document.getElementById('connectModal');
             modal.classList.remove('show');
             document.body.style.overflow = '';
+        }
+
+        function openInMetaMaskApp() {
+            const currentUrl = window.location.href;
+            const metamaskDeepLink = `https://metamask.app.link/dapp/${window.location.hostname}${window.location.pathname}${window.location.search}`;
+            
+            showToast('메타마스크 앱으로 이동 중...', 'success');
+            
+            // 메타마스크 앱으로 리디렉션
+            setTimeout(() => {
+                window.location.href = metamaskDeepLink;
+            }, 1000);
+            
+            // 백업: 새 탭에서 열기
+            setTimeout(() => {
+                window.open(metamaskDeepLink, '_blank');
+            }, 500);
         }
 
         function handleWalletConnection() {
@@ -2197,6 +2339,13 @@
         document.addEventListener('DOMContentLoaded', function() {
             console.log('🌟 WETO Premium Token Sale Platform Initialized');
             
+            // 모바일 환경 체크 및 안내
+            if (isMobile() && !isMetaMaskMobileApp() && typeof window.ethereum === 'undefined') {
+                setTimeout(() => {
+                    showToast('📱 최적의 경험을 위해 메타마스크 또는 Trust Wallet 앱을 사용해주세요!', 'warning');
+                }, 2000);
+            }
+            
             initTheme();
             initCountdown();
             fetchBNBPrice();
@@ -2263,7 +2412,11 @@
             }, 3000);
 
             setTimeout(() => {
-                showToast('✨ Welcome to WETO Token Sale', 'success');
+                if (isMobile() && !isMetaMaskMobileApp()) {
+                    showToast('📱 모바일에서 지갑 연결을 원하시면 메타마스크 앱을 사용해주세요!', 'warning');
+                } else {
+                    showToast('✨ Welcome to WETO Token Sale', 'success');
+                }
             }, 1000);
         });
 
