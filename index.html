@@ -14,7 +14,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
   
   <style>
     :root {
@@ -31,8 +30,8 @@
       --weto-gradient-3: linear-gradient(135deg, #667eea 0%, #4F7EFF 100%);
       --weto-gradient-luxury: linear-gradient(135deg, #FFD700 0%, #FFA726 50%, #FF6B8A 100%);
       --weto-gradient-premium: linear-gradient(135deg, #4F7EFF 0%, #667eea 50%, #764ba2 100%);
-      --weto-neon-glow: 0 0 20px rgba(79, 126, 255, 0.6), 0 0 40px rgba(79, 126, 255, 0.4), 0 0 60px rgba(79, 126, 255, 0.2);
-      --weto-luxury-glow: 0 0 30px rgba(255, 215, 0, 0.8), 0 0 50px rgba(255, 167, 38, 0.6), 0 0 80px rgba(255, 107, 138, 0.4);
+      --weto-neon-glow: 0 0 30px rgba(79, 126, 255, 0.6), 0 0 60px rgba(79, 126, 255, 0.4), 0 0 100px rgba(79, 126, 255, 0.2);
+      --weto-luxury-glow: 0 0 40px rgba(255, 215, 0, 0.8), 0 0 80px rgba(255, 167, 38, 0.6), 0 0 120px rgba(255, 107, 138, 0.4);
       --border-radius: 24px;
       --border-radius-sm: 16px;
     }
@@ -48,114 +47,88 @@
       color: #ffffff;
       background: var(--weto-darker);
       background-image: 
-        radial-gradient(ellipse at top left, rgba(120, 119, 198, 0.6) 0%, transparent 50%),
-        radial-gradient(ellipse at bottom right, rgba(255, 107, 138, 0.4) 0%, transparent 50%),
-        radial-gradient(ellipse at center, rgba(79, 126, 255, 0.3) 0%, transparent 50%),
-        radial-gradient(ellipse at 75% 25%, rgba(0, 212, 170, 0.2) 0%, transparent 50%);
+        radial-gradient(ellipse at top left, rgba(120, 119, 198, 0.4) 0%, transparent 50%),
+        radial-gradient(ellipse at bottom right, rgba(255, 107, 138, 0.3) 0%, transparent 50%),
+        radial-gradient(ellipse at center, rgba(79, 126, 255, 0.2) 0%, transparent 50%),
+        radial-gradient(ellipse at 75% 25%, rgba(255, 215, 0, 0.15) 0%, transparent 50%);
       overflow-x: hidden;
       min-height: 100vh;
       position: relative;
     }
 
-    /* Advanced Floating Elements with Organic Shapes */
+    /* Luxury Floating Elements with Organic Shapes */
     .floating-orb {
       position: absolute;
-      opacity: 0.3;
+      opacity: 0.2;
       pointer-events: none;
       z-index: 1;
-      filter: blur(3px);
+      filter: blur(2px);
     }
 
     .orb-1 {
-      width: 280px;
-      height: 400px;
+      width: 450px;
+      height: 600px;
       background: var(--weto-gradient-luxury);
-      top: 8%;
-      left: 3%;
+      top: 5%;
+      left: -5%;
       border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-      animation: heartbeat 5s ease-in-out infinite, morphShape1 20s ease-in-out infinite, orbFloat1 15s ease-in-out infinite;
+      animation: heartbeat 6s ease-in-out infinite, morphShape1 25s ease-in-out infinite, orbFloat1 20s ease-in-out infinite;
       box-shadow: var(--weto-luxury-glow);
     }
 
     .orb-2 {
-      width: 350px;
-      height: 280px;
+      width: 500px;
+      height: 400px;
       background: var(--weto-gradient-premium);
-      top: 35%;
-      right: 5%;
+      top: 30%;
+      right: -8%;
       border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-      animation: heartbeat 4s ease-in-out infinite 1.5s, morphShape2 25s ease-in-out infinite, orbFloat2 18s ease-in-out infinite;
+      animation: heartbeat 5s ease-in-out infinite 2s, morphShape2 30s ease-in-out infinite, orbFloat2 25s ease-in-out infinite;
       box-shadow: var(--weto-neon-glow);
     }
 
     .orb-3 {
-      width: 220px;
-      height: 320px;
+      width: 350px;
+      height: 500px;
       background: var(--weto-gradient-2);
-      bottom: 15%;
-      left: 8%;
+      bottom: 10%;
+      left: 5%;
       border-radius: 80% 20% 60% 40% / 20% 80% 40% 60%;
-      animation: heartbeat 6s ease-in-out infinite 3s, morphShape3 15s ease-in-out infinite, orbFloat3 12s ease-in-out infinite;
-      box-shadow: 0 0 40px rgba(255, 107, 138, 0.7);
+      animation: heartbeat 7s ease-in-out infinite 4s, morphShape3 20s ease-in-out infinite, orbFloat3 18s ease-in-out infinite;
+      box-shadow: 0 0 60px rgba(255, 107, 138, 0.6);
     }
 
     .orb-4 {
-      width: 300px;
-      height: 200px;
+      width: 400px;
+      height: 300px;
       background: var(--weto-gradient);
-      top: 65%;
-      right: 20%;
+      top: 60%;
+      right: 15%;
       border-radius: 40% 60% 30% 70% / 60% 40% 60% 40%;
-      animation: heartbeat 4.5s ease-in-out infinite 2s, morphShape4 22s ease-in-out infinite, orbFloat4 20s ease-in-out infinite;
-      box-shadow: 0 0 50px rgba(102, 126, 234, 0.6);
-    }
-
-    .orb-5 {
-      width: 180px;
-      height: 250px;
-      background: linear-gradient(135deg, #FFA726 0%, #FF6B8A 100%);
-      top: 20%;
-      left: 55%;
-      border-radius: 70% 30% 50% 50% / 40% 60% 30% 70%;
-      animation: heartbeat 3.5s ease-in-out infinite 1s, morphShape5 18s ease-in-out infinite, orbFloat5 10s ease-in-out infinite;
-      box-shadow: 0 0 35px rgba(255, 167, 38, 0.6);
-    }
-
-    .orb-6 {
-      width: 240px;
-      height: 180px;
-      background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
-      bottom: 40%;
-      right: 35%;
-      border-radius: 50% 50% 80% 20% / 30% 70% 50% 50%;
-      animation: heartbeat 5.5s ease-in-out infinite 2.5s, morphShape6 28s ease-in-out infinite, orbFloat6 16s ease-in-out infinite;
-      box-shadow: 0 0 45px rgba(118, 75, 162, 0.5);
+      animation: heartbeat 5.5s ease-in-out infinite 3s, morphShape4 28s ease-in-out infinite, orbFloat4 22s ease-in-out infinite;
+      box-shadow: 0 0 70px rgba(102, 126, 234, 0.5);
     }
 
     @keyframes heartbeat {
       0%, 100% { 
         transform: scale(1);
+        opacity: 0.2;
+      }
+      20% { 
+        transform: scale(1.05);
         opacity: 0.3;
       }
-      15% { 
-        transform: scale(1.05);
-        opacity: 0.4;
-      }
-      30% { 
+      40% { 
         transform: scale(1.15);
-        opacity: 0.6;
-      }
-      45% { 
-        transform: scale(1.08);
-        opacity: 0.45;
+        opacity: 0.5;
       }
       60% { 
-        transform: scale(1.25);
-        opacity: 0.7;
+        transform: scale(1.08);
+        opacity: 0.35;
       }
-      75% { 
-        transform: scale(1.1);
-        opacity: 0.5;
+      80% { 
+        transform: scale(1.12);
+        opacity: 0.4;
       }
     }
 
@@ -187,59 +160,33 @@
       75% { border-radius: 30% 70% 50% 50% / 50% 50% 70% 30%; }
     }
 
-    @keyframes morphShape5 {
-      0%, 100% { border-radius: 70% 30% 50% 50% / 40% 60% 30% 70%; }
-      30% { border-radius: 50% 50% 70% 30% / 60% 40% 50% 50%; }
-      60% { border-radius: 30% 70% 40% 60% / 50% 50% 70% 30%; }
-    }
-
-    @keyframes morphShape6 {
-      0%, 100% { border-radius: 50% 50% 80% 20% / 30% 70% 50% 50%; }
-      20% { border-radius: 60% 40% 50% 50% / 50% 50% 60% 40%; }
-      40% { border-radius: 40% 60% 30% 70% / 70% 30% 40% 60%; }
-      60% { border-radius: 70% 30% 60% 40% / 40% 60% 30% 70%; }
-      80% { border-radius: 30% 70% 40% 60% / 60% 40% 70% 30%; }
-    }
-
     @keyframes orbFloat1 {
       0%, 100% { transform: translate(0, 0) rotate(0deg); }
-      25% { transform: translate(60px, -40px) rotate(90deg); }
-      50% { transform: translate(-30px, -80px) rotate(180deg); }
-      75% { transform: translate(-50px, 30px) rotate(270deg); }
+      25% { transform: translate(30px, -20px) rotate(90deg); }
+      50% { transform: translate(-15px, -40px) rotate(180deg); }
+      75% { transform: translate(-25px, 15px) rotate(270deg); }
     }
 
     @keyframes orbFloat2 {
       0%, 100% { transform: translate(0, 0) rotate(0deg); }
-      33% { transform: translate(-100px, 50px) rotate(120deg); }
-      66% { transform: translate(80px, -100px) rotate(240deg); }
+      33% { transform: translate(-40px, 25px) rotate(120deg); }
+      66% { transform: translate(30px, -50px) rotate(240deg); }
     }
 
     @keyframes orbFloat3 {
       0%, 100% { transform: translate(0, 0) rotate(0deg); }
-      50% { transform: translate(90px, -70px) rotate(180deg); }
+      50% { transform: translate(45px, -35px) rotate(180deg); }
     }
 
     @keyframes orbFloat4 {
       0%, 100% { transform: translate(0, 0) rotate(0deg); }
-      20% { transform: translate(-40px, -50px) rotate(72deg); }
-      40% { transform: translate(70px, -30px) rotate(144deg); }
-      60% { transform: translate(40px, 80px) rotate(216deg); }
-      80% { transform: translate(-80px, 40px) rotate(288deg); }
+      20% { transform: translate(-20px, -25px) rotate(72deg); }
+      40% { transform: translate(35px, -15px) rotate(144deg); }
+      60% { transform: translate(20px, 40px) rotate(216deg); }
+      80% { transform: translate(-40px, 20px) rotate(288deg); }
     }
 
-    @keyframes orbFloat5 {
-      0%, 100% { transform: translate(0, 0) rotate(0deg); }
-      25% { transform: translate(-40px, 50px) rotate(90deg); }
-      75% { transform: translate(50px, -40px) rotate(270deg); }
-    }
-
-    @keyframes orbFloat6 {
-      0%, 100% { transform: translate(0, 0) rotate(0deg); }
-      30% { transform: translate(60px, -60px) rotate(108deg); }
-      60% { transform: translate(-40px, 70px) rotate(216deg); }
-    }
-
-    /* Enhanced Particles with Multiple Types */
+    /* Enhanced Particles */
     .particles {
       position: fixed;
       top: 0;
@@ -253,7 +200,7 @@
     .particle {
       position: absolute;
       border-radius: 50%;
-      animation: particleFloat 20s linear infinite;
+      animation: particleFloat 25s linear infinite;
     }
 
     .particle-type-1 {
@@ -273,8 +220,8 @@
     .particle-type-3 {
       width: 3px;
       height: 3px;
-      background: rgba(0, 212, 170, 0.7);
-      box-shadow: 0 0 8px rgba(0, 212, 170, 0.9);
+      background: rgba(255, 215, 0, 0.7);
+      box-shadow: 0 0 8px rgba(255, 215, 0, 0.9);
     }
 
     @keyframes particleFloat {
@@ -294,7 +241,7 @@
       }
     }
 
-    /* Premium Header with Glass Morphism */
+    /* Header */
     .header-section {
       position: fixed;
       top: 0;
@@ -302,9 +249,9 @@
       right: 0;
       z-index: 1000;
       padding: 20px 0;
-      background: rgba(11, 13, 26, 0.85);
+      background: rgba(11, 13, 26, 0.9);
       backdrop-filter: blur(30px) saturate(180%);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     }
@@ -328,48 +275,25 @@
       font-size: 32px;
       color: #ffffff;
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      filter: drop-shadow(0 0 10px rgba(79, 126, 255, 0.5));
+      filter: drop-shadow(0 0 15px rgba(79, 126, 255, 0.5));
     }
 
     .logo:hover {
       transform: scale(1.05) translateY(-2px);
-      filter: drop-shadow(0 0 20px rgba(79, 126, 255, 0.8));
+      filter: drop-shadow(0 0 25px rgba(79, 126, 255, 0.8));
+      color: #ffffff;
+      text-decoration: none;
     }
 
     .weto-icon {
       width: 50px;
       height: 50px;
-      background: var(--weto-gradient-2);
+      background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMjAiIGZpbGw9IiM0RjdFRkYiLz4KPHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMjAiIGZpbGw9IiM0RjdFRkYiLz4KPHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIGZpbGw9IndoaXRlIiB2aWV3Qm94PSIwIDAgMjQgMjQiPgo8cGF0aCBkPSJNOSA2djZoLjc1TDE0IDZoMi41djZoMC41YzEuMSAwIDIgLjkgMiAydjNoLTJWMTZoLTJ2MWgtMnYtMUg5VjE3SDd2LTNjMC0xLjEuOS0yIDItMlY2SDl6Ii8+Cjwvc3ZnPgo8L3N2Zz4K') center/contain no-repeat;
       border-radius: var(--border-radius-sm);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 900;
-      font-size: 22px;
-      font-style: italic;
-      color: white;
       position: relative;
       overflow: hidden;
       box-shadow: var(--weto-neon-glow);
       animation: iconPulse 3s ease-in-out infinite;
-    }
-
-    .weto-icon::after {
-      content: 'w';
-      z-index: 2;
-      position: relative;
-    }
-
-    .weto-icon::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: conic-gradient(from 0deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-      animation: iconRotate 4s linear infinite;
-      z-index: 1;
     }
 
     @keyframes iconPulse {
@@ -378,20 +302,15 @@
         box-shadow: var(--weto-neon-glow);
       }
       50% { 
-        transform: scale(1.1);
-        box-shadow: 0 0 30px rgba(79, 126, 255, 0.8), 0 0 50px rgba(79, 126, 255, 0.6), 0 0 80px rgba(79, 126, 255, 0.4);
+        transform: scale(1.05);
+        box-shadow: 0 0 40px rgba(79, 126, 255, 0.8), 0 0 60px rgba(79, 126, 255, 0.6), 0 0 100px rgba(79, 126, 255, 0.4);
       }
-    }
-
-    @keyframes iconRotate {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
     }
 
     .header-nav {
       display: flex;
       align-items: center;
-      gap: 40px;
+      gap: 30px;
     }
 
     .nav-link {
@@ -423,6 +342,7 @@
       color: #ffffff;
       transform: translateY(-3px);
       text-shadow: 0 0 15px rgba(79, 126, 255, 0.8);
+      text-decoration: none;
     }
 
     .nav-link:hover::before {
@@ -453,7 +373,7 @@
       left: -100%;
       width: 100%;
       height: 100%;
-      background: var(--weto-gradient-fire);
+      background: var(--weto-gradient-luxury);
       transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       z-index: -1;
     }
@@ -468,14 +388,25 @@
       left: 0;
     }
 
-    /* Main Section with Advanced Animations */
+    .connect-wallet-btn.connected {
+      background: linear-gradient(135deg, #00D4AA, #4F7EFF);
+      box-shadow: 0 0 30px rgba(0, 212, 170, 0.5);
+      animation: connectedPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes connectedPulse {
+      0%, 100% { box-shadow: 0 0 30px rgba(0, 212, 170, 0.5); }
+      50% { box-shadow: 0 0 50px rgba(0, 212, 170, 0.8); }
+    }
+
+    /* Main Section */
     .main-section {
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
       position: relative;
-      padding: 140px 40px 80px;
+      padding: 140px 40px 120px;
       z-index: 10;
     }
 
@@ -505,32 +436,15 @@
       box-shadow: 0 0 30px rgba(255, 107, 138, 0.4);
     }
 
-    .presale-badge::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, var(--weto-primary), transparent);
-      animation: badgeShine 3s ease-in-out infinite;
-    }
-
     @keyframes badgeBreath {
       0%, 100% { 
         transform: scale(1);
         box-shadow: 0 0 30px rgba(255, 107, 138, 0.4);
       }
       50% { 
-        transform: scale(1.05);
+        transform: scale(1.02);
         box-shadow: 0 0 50px rgba(255, 107, 138, 0.7);
       }
-    }
-
-    @keyframes badgeShine {
-      0% { left: -100%; }
-      50% { left: 100%; }
-      100% { left: 100%; }
     }
 
     .countdown-timer {
@@ -561,7 +475,7 @@
       left: -2px;
       right: -2px;
       bottom: -2px;
-      background: var(--weto-gradient-fire);
+      background: var(--weto-gradient-luxury);
       border-radius: var(--border-radius);
       z-index: -1;
       opacity: 0;
@@ -569,7 +483,7 @@
     }
 
     .time-box:hover {
-      transform: translateY(-8px) scale(1.1);
+      transform: translateY(-8px) scale(1.05);
       border-color: rgba(79, 126, 255, 0.5);
       box-shadow: 0 20px 50px rgba(79, 126, 255, 0.4);
     }
@@ -603,12 +517,8 @@
     }
 
     @keyframes numberGlow {
-      from {
-        filter: brightness(1);
-      }
-      to {
-        filter: brightness(1.3);
-      }
+      from { filter: brightness(1); }
+      to { filter: brightness(1.3); }
     }
 
     .time-label {
@@ -640,7 +550,7 @@
         filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.6));
       }
       50% { 
-        transform: scale(1.02);
+        transform: scale(1.01);
         filter: drop-shadow(0 0 50px rgba(255, 215, 0, 0.9));
       }
     }
@@ -656,7 +566,6 @@
       text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
     }
 
-    /* Enhanced BNB Price Display */
     .bnb-price-display {
       background: var(--weto-card);
       border: 1px solid rgba(255, 255, 255, 0.15);
@@ -673,37 +582,20 @@
       animation: priceDisplayBreath 5s ease-in-out infinite;
     }
 
-    .bnb-price-display::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 167, 38, 0.1), transparent);
-      animation: priceShine 4s ease-in-out infinite;
-    }
-
     @keyframes priceDisplayBreath {
       0%, 100% { 
         transform: scale(1);
         box-shadow: 0 0 20px rgba(255, 167, 38, 0.3);
       }
       50% { 
-        transform: scale(1.02);
+        transform: scale(1.01);
         box-shadow: 0 0 40px rgba(255, 167, 38, 0.5);
       }
     }
 
-    @keyframes priceShine {
-      0% { left: -100%; }
-      50% { left: 100%; }
-      100% { left: 100%; }
-    }
-
     .bnb-price-display:hover {
       border-color: rgba(255, 167, 38, 0.5);
-      transform: translateY(-5px) scale(1.03);
+      transform: translateY(-5px) scale(1.02);
       box-shadow: 0 15px 40px rgba(255, 167, 38, 0.4);
     }
 
@@ -721,7 +613,6 @@
       text-shadow: 0 0 15px rgba(255, 167, 38, 0.7);
     }
 
-    /* Enhanced Progress Section */
     .progress-section {
       margin: 50px 0;
       animation: progressBreath 6s ease-in-out infinite;
@@ -729,7 +620,7 @@
 
     @keyframes progressBreath {
       0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.01); }
+      50% { transform: scale(1.005); }
     }
 
     .progress-info {
@@ -799,7 +690,6 @@
       text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
     }
 
-    /* Enhanced Price Info */
     .price-info {
       display: flex;
       justify-content: center;
@@ -882,7 +772,6 @@
       }
     }
 
-    /* Premium Buy Button */
     .buy-btn {
       background: var(--weto-gradient-luxury);
       border: none;
@@ -932,7 +821,7 @@
         box-shadow: 0 15px 50px rgba(255, 215, 0, 0.5);
       }
       50% { 
-        transform: scale(1.02);
+        transform: scale(1.01);
         box-shadow: 0 25px 70px rgba(255, 215, 0, 0.8);
       }
     }
@@ -944,7 +833,7 @@
     }
 
     .buy-btn:hover {
-      transform: translateY(-6px) scale(1.08);
+      transform: translateY(-6px) scale(1.05);
       box-shadow: 0 30px 80px rgba(255, 215, 0, 0.9);
       filter: brightness(1.1);
     }
@@ -955,10 +844,85 @@
     }
 
     .buy-btn:active {
-      transform: translateY(-3px) scale(1.05);
+      transform: translateY(-3px) scale(1.02);
     }
 
-    /* Enhanced Modal Styles */
+    /* Social Links Section */
+    .social-section {
+      margin-top: 80px;
+      text-align: center;
+    }
+
+    .social-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 30px;
+      font-family: "Outfit", sans-serif;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    .social-link {
+      width: 70px;
+      height: 70px;
+      background: var(--weto-card);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      backdrop-filter: blur(20px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .social-link::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: var(--weto-gradient-2);
+      transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: -1;
+      opacity: 0.1;
+    }
+
+    .social-link:hover {
+      color: #ffffff;
+      border-color: rgba(79, 126, 255, 0.5);
+      transform: translateY(-8px) scale(1.1);
+      box-shadow: 0 20px 50px rgba(79, 126, 255, 0.4);
+      text-decoration: none;
+    }
+
+    .social-link:hover::before {
+      left: 0;
+    }
+
+    .social-link svg,
+    .social-link img {
+      width: 28px;
+      height: 28px;
+      transition: all 0.3s ease;
+    }
+
+    .social-link:hover svg,
+    .social-link:hover img {
+      transform: scale(1.2);
+    }
+
+    /* Modal Styles */
     .modal-content {
       background: rgba(11, 13, 26, 0.95);
       border: 1px solid rgba(255, 255, 255, 0.2);
@@ -967,33 +931,6 @@
       box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5);
       position: relative;
       overflow: hidden;
-      animation: modalGlow 4s ease-in-out infinite;
-    }
-
-    .modal-content::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(79, 126, 255, 0.05), transparent);
-      animation: modalShine 5s ease-in-out infinite;
-    }
-
-    @keyframes modalGlow {
-      0%, 100% { 
-        box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5);
-      }
-      50% { 
-        box-shadow: 0 25px 80px rgba(79, 126, 255, 0.3);
-      }
-    }
-
-    @keyframes modalShine {
-      0% { left: -100%; }
-      50% { left: 100%; }
-      100% { left: 100%; }
     }
 
     .modal-header {
@@ -1011,7 +948,6 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      text-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
     }
 
     .btn-close {
@@ -1038,7 +974,6 @@
       padding: 0 30px 30px;
     }
 
-    /* Enhanced Form Elements */
     .form-group {
       margin-bottom: 25px;
     }
@@ -1063,25 +998,10 @@
       overflow: hidden;
     }
 
-    .form-input-group::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(79, 126, 255, 0.1), transparent);
-      transition: left 0.4s ease;
-    }
-
     .form-input-group:focus-within {
       border-color: rgba(79, 126, 255, 0.6);
       box-shadow: 0 0 30px rgba(79, 126, 255, 0.3);
-      transform: scale(1.02);
-    }
-
-    .form-input-group:focus-within::before {
-      left: 0;
+      transform: scale(1.01);
     }
 
     .form-input {
@@ -1131,7 +1051,6 @@
       font-size: 16px;
     }
 
-    /* Enhanced Transaction Info */
     .transaction-info {
       background: rgba(255, 255, 255, 0.04);
       border: 1px solid rgba(255, 255, 255, 0.15);
@@ -1139,42 +1058,11 @@
       padding: 25px;
       margin: 30px 0;
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      position: relative;
-      overflow: hidden;
-      animation: transactionInfoBreath 5s ease-in-out infinite;
-    }
-
-    .transaction-info::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(0, 212, 170, 0.1), transparent);
-      animation: transactionShine 4s ease-in-out infinite;
-    }
-
-    @keyframes transactionInfoBreath {
-      0%, 100% { 
-        transform: scale(1);
-        box-shadow: 0 0 20px rgba(0, 212, 170, 0.2);
-      }
-      50% { 
-        transform: scale(1.01);
-        box-shadow: 0 0 30px rgba(0, 212, 170, 0.4);
-      }
-    }
-
-    @keyframes transactionShine {
-      0% { left: -100%; }
-      50% { left: 100%; }
-      100% { left: 100%; }
     }
 
     .transaction-info:hover {
       border-color: rgba(79, 126, 255, 0.4);
-      transform: scale(1.02);
+      transform: scale(1.01);
       box-shadow: 0 0 40px rgba(79, 126, 255, 0.3);
     }
 
@@ -1201,16 +1089,6 @@
       background: rgba(79, 126, 255, 0.1);
       border-radius: 10px;
       padding: 15px;
-      animation: finalRowGlow 3s ease-in-out infinite;
-    }
-
-    @keyframes finalRowGlow {
-      0%, 100% { 
-        box-shadow: 0 0 15px rgba(79, 126, 255, 0.3);
-      }
-      50% { 
-        box-shadow: 0 0 25px rgba(79, 126, 255, 0.5);
-      }
     }
 
     .info-label {
@@ -1224,7 +1102,6 @@
       text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
     }
 
-    /* Enhanced Wallet Selection */
     .wallet-list {
       list-style: none;
       padding: 0;
@@ -1248,7 +1125,6 @@
       text-align: left;
       position: relative;
       overflow: hidden;
-      animation: walletLinkFloat 4s ease-in-out infinite;
     }
 
     .wallet-link::before {
@@ -1264,16 +1140,12 @@
       opacity: 0.1;
     }
 
-    @keyframes walletLinkFloat {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-3px); }
-    }
-
     .wallet-link:hover {
       border-color: rgba(79, 126, 255, 0.5);
       color: #ffffff;
       transform: translateY(-5px) scale(1.02);
       box-shadow: 0 20px 50px rgba(79, 126, 255, 0.4);
+      text-decoration: none;
     }
 
     .wallet-link:hover::before {
@@ -1306,7 +1178,6 @@
       text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
     }
 
-    /* Enhanced Status Messages */
     .status-message {
       position: fixed;
       top: 120px;
@@ -1322,12 +1193,6 @@
       backdrop-filter: blur(25px);
       border: 1px solid rgba(255, 255, 255, 0.2);
       box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
-      animation: statusFloat 3s ease-in-out infinite;
-    }
-
-    @keyframes statusFloat {
-      0%, 100% { transform: translateX(0) translateY(0); }
-      50% { transform: translateX(0) translateY(-5px); }
     }
 
     .status-message.show {
@@ -1346,7 +1211,7 @@
       box-shadow: 0 0 30px rgba(244, 67, 54, 0.4);
     }
 
-    /* Mobile Responsive Enhancements */
+    /* Mobile Responsive */
     @media (max-width: 768px) {
       .floating-orb {
         display: none;
@@ -1363,11 +1228,10 @@
       .weto-icon {
         width: 40px;
         height: 40px;
-        font-size: 18px;
       }
 
       .main-section {
-        padding: 120px 20px 60px;
+        padding: 120px 20px 80px;
       }
 
       .main-title {
@@ -1402,6 +1266,21 @@
         max-width: 320px;
         padding: 20px 50px;
         font-size: 18px;
+      }
+
+      .social-links {
+        gap: 20px;
+      }
+
+      .social-link {
+        width: 60px;
+        height: 60px;
+      }
+
+      .social-link svg,
+      .social-link img {
+        width: 24px;
+        height: 24px;
       }
 
       .form-input-group {
@@ -1442,53 +1321,6 @@
         padding: 20px;
       }
     }
-
-    /* Advanced Hover Effects for Desktop */
-    @media (min-width: 769px) {
-      .main-content:hover .floating-orb {
-        animation-play-state: paused;
-      }
-
-      .time-box:hover .time-number {
-        animation: numberExplode 0.5s ease-out;
-      }
-
-      @keyframes numberExplode {
-        0% { transform: scale(1); }
-        50% { transform: scale(1.3); }
-        100% { transform: scale(1); }
-      }
-
-      .price-item:hover .price-value {
-        animation: valueGlow 1s ease-in-out infinite;
-      }
-
-      @keyframes valueGlow {
-        0%, 100% { text-shadow: 0 0 15px rgba(79, 126, 255, 0.6); }
-        50% { text-shadow: 0 0 25px rgba(79, 126, 255, 1); }
-      }
-    }
-
-    /* Performance Optimizations */
-    @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-      }
-    }
-
-    /* High DPI Display Optimizations */
-    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-      .weto-icon,
-      .token-icon,
-      .wallet-icon {
-        transform: translateZ(0);
-        backface-visibility: hidden;
-      }
-    }
   </style>
 </head>
 
@@ -1498,8 +1330,6 @@
   <div class="floating-orb orb-2"></div>
   <div class="floating-orb orb-3"></div>
   <div class="floating-orb orb-4"></div>
-  <div class="floating-orb orb-5"></div>
-  <div class="floating-orb orb-6"></div>
 
   <!-- Enhanced Particle Effect -->
   <div class="particles" id="particles"></div>
@@ -1513,7 +1343,7 @@
       </a>
       
       <nav class="header-nav">
-        <a href="#" class="nav-link" onclick="downloadWhitepaper()">Whitepaper</a>
+        <a href="https://weto.asia/assets/pdf/weto%20whitepaper_EN.pdf" target="_blank" class="nav-link">Whitepaper</a>
         <button class="connect-wallet-btn" onclick="handleWalletConnection()" id="connectBtn">Connect Wallet</button>
       </nav>
     </div>
@@ -1582,6 +1412,47 @@
       <button class="buy-btn" data-bs-toggle="modal" data-bs-target="#buyModal">
         Buy WETO Now
       </button>
+
+      <!-- Social Links Section -->
+      <div class="social-section">
+        <h3 class="social-title">Join Our Community</h3>
+        <div class="social-links">
+          <!-- Telegram -->
+          <a href="#" class="social-link" title="Telegram" onclick="openTelegram()">
+            <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/>
+            </svg>
+          </a>
+          
+          <!-- Twitter/X -->
+          <a href="#" class="social-link" title="Twitter" onclick="openTwitter()">
+            <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+          </a>
+          
+          <!-- WETO Website -->
+          <a href="https://weto.asia/index_en.html" target="_blank" class="social-link" title="WETO Official Website">
+            <div class="weto-icon" style="width: 28px; height: 28px; border-radius: 6px;"></div>
+          </a>
+          
+          <!-- MyMoment -->
+          <a href="https://immhworld.com/index-en.html" target="_blank" class="social-link" title="MyMoment">
+            <svg width="28" height="28" fill="none" viewBox="0 0 40 40">
+              <defs>
+                <linearGradient id="mymoment-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#4F7EFF"/>
+                  <stop offset="50%" style="stop-color:#FF6B8A"/>
+                  <stop offset="100%" style="stop-color:#00D4AA"/>
+                </linearGradient>
+              </defs>
+              <circle cx="20" cy="20" r="18" fill="url(#mymoment-gradient)" opacity="0.8"/>
+              <circle cx="20" cy="20" r="8" fill="white"/>
+              <path d="M15 15l10 5-10 5V15z" fill="url(#mymoment-gradient)"/>
+            </svg>
+          </a>
+        </div>
+      </div>
     </div>
   </main>
 
@@ -1659,13 +1530,27 @@
           <ul class="wallet-list">
             <li>
               <button type="button" class="wallet-link" onclick="connectMetaMask()">
-                <div class="wallet-icon" style="background: #f6851b; color: white;">MM</div>
+                <div class="wallet-icon" style="background: #f6851b; color: white;">
+                  <svg width="32" height="32" viewBox="0 0 318.6 318.6" fill="white">
+                    <path d="M274.1,35.5l-99.5,73.9l18.4-43.3L274.1,35.5z"/>
+                    <path d="M44.4,35.5l98.7,74.6l-17.5-44L44.4,35.5z"/>
+                    <path d="M238.3,206.8l-26.5,40.6l56.7,15.6l16.3-55.3L238.3,206.8z"/>
+                    <path d="M33.9,207.7l16.2,55.3l56.7-15.6l-26.5-40.6L33.9,207.7z"/>
+                    <path d="M103.6,138.2l-15.8,23.9l56.3,2.5l-2-60.5L103.6,138.2z"/>
+                    <path d="M214.9,138.2l-38.2-36.6l-1.3,61.2l56.3-2.5L214.9,138.2z"/>
+                  </svg>
+                </div>
                 <span class="wallet-name">MetaMask</span>
               </button>
             </li>
             <li>
               <button type="button" class="wallet-link" onclick="connectTrustWallet()">
-                <div class="wallet-icon" style="background: #3375BB; color: white;">TW</div>
+                <div class="wallet-icon" style="background: #3375BB; color: white;">
+                  <svg width="32" height="32" viewBox="0 0 32 32" fill="white">
+                    <path d="M16 2L3 8v6c0 7.3 5 14.1 13 16 8-1.9 13-8.7 13-16V8L16 2z"/>
+                    <path d="M16 8L8 12v4c0 4.4 3 8.5 8 9.6 5-1.1 8-5.2 8-9.6v-4L16 8z"/>
+                  </svg>
+                </div>
                 <span class="wallet-name">Trust Wallet</span>
               </button>
             </li>
@@ -1678,47 +1563,49 @@
   <!-- Scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.0/web3.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
   <script>
+    // Global Variables
     let web3 = null;
     let userAccount = null;
     let isConnected = false;
     let currentBNBPrice = 600;
-    let particleAnimationId;
     let countdownInterval;
 
     const WETO_CONFIG = {
       tokenPrice: 1.00,
       bonusPercent: 10,
       maxTokensForSale: 80000000,
-      presaleEnd: new Date('2024-12-31T23:59:59Z')
+      presaleEnd: new Date('2024-12-31T23:59:59Z'),
+      // BSC Network Configuration
+      chainId: '0x38', // BSC Mainnet
+      rpcUrl: 'https://bsc-dataseed1.binance.org/',
+      chainName: 'BNB Smart Chain',
+      nativeCurrency: {
+        name: 'BNB',
+        symbol: 'BNB',
+        decimals: 18
+      },
+      blockExplorerUrls: ['https://bscscan.com']
     };
 
-    // Enhanced Particle System with Multiple Types
+    // Enhanced Particle System
     function createParticles() {
       const particlesContainer = document.getElementById('particles');
       if (!particlesContainer) return;
       
-      const particleCount = 80; // Increased for more immersive effect
       const particleTypes = ['particle-type-1', 'particle-type-2', 'particle-type-3'];
       
       function createParticle() {
         const particle = document.createElement('div');
         particle.className = 'particle ' + particleTypes[Math.floor(Math.random() * particleTypes.length)];
         
-        // Random position and timing
         particle.style.left = Math.random() * 100 + '%';
-        particle.style.animationDelay = Math.random() * 20 + 's';
-        particle.style.animationDuration = (Math.random() * 15 + 20) + 's';
-        
-        // Random horizontal drift
-        const drift = (Math.random() - 0.5) * 200;
-        particle.style.setProperty('--drift', drift + 'px');
+        particle.style.animationDelay = Math.random() * 25 + 's';
+        particle.style.animationDuration = (Math.random() * 15 + 25) + 's';
         
         particlesContainer.appendChild(particle);
         
-        // Remove particle after animation
         setTimeout(() => {
           if (particle.parentNode) {
             particle.parentNode.removeChild(particle);
@@ -1726,27 +1613,22 @@
         }, (parseFloat(particle.style.animationDuration) + parseFloat(particle.style.animationDelay)) * 1000);
       }
 
-      // Create initial burst
-      for (let i = 0; i < particleCount; i++) {
-        setTimeout(createParticle, i * 100);
+      // Create initial particles
+      for (let i = 0; i < 60; i++) {
+        setTimeout(createParticle, i * 150);
       }
       
       // Continue creating particles
-      setInterval(createParticle, 400);
+      setInterval(createParticle, 500);
     }
 
-    // Enhanced BNB Price Fetching with Multiple Sources
+    // Enhanced BNB Price Fetching
     async function updateBNBPrice() {
       const dataSources = [
         {
           name: 'CoinGecko',
           url: 'https://api.coingecko.com/api/v3/simple/price?ids=binancecoin&vs_currencies=usd',
           parser: (data) => data.binancecoin?.usd
-        },
-        {
-          name: 'CryptoCompare',
-          url: 'https://min-api.cryptocompare.com/data/price?fsym=BNB&tsyms=USD',
-          parser: (data) => data.USD
         },
         {
           name: 'Binance',
@@ -1768,8 +1650,6 @@
               const oldPrice = currentBNBPrice;
               currentBNBPrice = parseFloat(price);
               
-              // Animate price change
-              animatePriceChange(oldPrice, currentBNBPrice);
               updatePriceDisplay();
               calculateWETOAmount();
               
@@ -1783,26 +1663,7 @@
       }
       
       console.log('⚠️ All price sources failed, using fallback price: $600');
-      currentBNBPrice = 600;
       updatePriceDisplay();
-    }
-
-    // Animate price changes with visual effects
-    function animatePriceChange(oldPrice, newPrice) {
-      const priceElements = document.querySelectorAll('.bnb-price-value');
-      const isIncrease = newPrice > oldPrice;
-      
-      priceElements.forEach(element => {
-        element.style.transform = 'scale(1.1)';
-        element.style.color = isIncrease ? '#00D4AA' : '#FF6B8A';
-        element.style.textShadow = `0 0 20px ${isIncrease ? '#00D4AA' : '#FF6B8A'}`;
-        
-        setTimeout(() => {
-          element.style.transform = 'scale(1)';
-          element.style.color = '#FFA726';
-          element.style.textShadow = '0 0 15px rgba(255, 167, 38, 0.7)';
-        }, 300);
-      });
     }
 
     function updatePriceDisplay() {
@@ -1819,7 +1680,7 @@
       }
     }
 
-    // Enhanced WETO calculation with bonus animation
+    // Enhanced WETO calculation
     function calculateWETOAmount() {
       const buyAmountInput = document.getElementById('buyAmount');
       const getAmountInput = document.getElementById('getAmount');
@@ -1836,16 +1697,9 @@
         const bonusTokens = Math.floor(wetoAmount * WETO_CONFIG.bonusPercent / 100);
         const totalTokens = wetoAmount + bonusTokens;
         
-        // Animate numbers counting up
-        animateCountUp(getAmountInput, parseInt(getAmountInput.value.replace(/,/g, '')) || 0, wetoAmount);
-        
-        if (bonusAmountSpan) {
-          animateCountUp(bonusAmountSpan, parseInt(bonusAmountSpan.textContent.replace(/[^0-9]/g, '')) || 0, bonusTokens, ' WETO');
-        }
-        
-        if (totalAmountSpan) {
-          animateCountUp(totalAmountSpan, parseInt(totalAmountSpan.textContent.replace(/,/g, '')) || 0, totalTokens);
-        }
+        getAmountInput.value = wetoAmount.toLocaleString();
+        if (bonusAmountSpan) bonusAmountSpan.textContent = bonusTokens.toLocaleString() + ' WETO';
+        if (totalAmountSpan) totalAmountSpan.textContent = totalTokens.toLocaleString();
       } else {
         getAmountInput.value = '0';
         if (bonusAmountSpan) bonusAmountSpan.textContent = '0 WETO';
@@ -1853,37 +1707,7 @@
       }
     }
 
-    // Smooth number counting animation
-    function animateCountUp(element, start, end, suffix = '') {
-      const duration = 1000;
-      const startTime = performance.now();
-      const isInput = element.tagName === 'INPUT';
-      
-      function updateValue(currentTime) {
-        const elapsed = currentTime - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        
-        // Easing function for smooth animation
-        const easeOutQuart = 1 - Math.pow(1 - progress, 4);
-        const currentValue = Math.floor(start + (end - start) * easeOutQuart);
-        
-        const formattedValue = currentValue.toLocaleString() + suffix;
-        
-        if (isInput) {
-          element.value = currentValue.toLocaleString();
-        } else {
-          element.textContent = formattedValue;
-        }
-        
-        if (progress < 1) {
-          requestAnimationFrame(updateValue);
-        }
-      }
-      
-      requestAnimationFrame(updateValue);
-    }
-
-    // Enhanced MetaMask Connection with Better UX
+    // Enhanced MetaMask Connection
     async function connectMetaMask() {
       try {
         if (typeof window.ethereum === 'undefined') {
@@ -1896,21 +1720,61 @@
 
         showStatus('🔄 Connecting to MetaMask...', 'success');
 
-        // Check if already connected
-        const accounts = await window.ethereum.request({ method: 'eth_accounts' });
-        if (accounts.length > 0) {
-          await setupConnection(accounts[0]);
-          return;
-        }
-
-        // Request connection
-        const newAccounts = await window.ethereum.request({
+        // Request account access
+        const accounts = await window.ethereum.request({
           method: 'eth_requestAccounts',
         });
 
-        if (newAccounts && newAccounts.length > 0) {
-          await setupConnection(newAccounts[0]);
+        if (!accounts || accounts.length === 0) {
+          throw new Error('Please select an account in MetaMask.');
         }
+
+        // Check and switch to BSC network
+        const chainId = await window.ethereum.request({ method: 'eth_chainId' });
+        
+        if (chainId !== WETO_CONFIG.chainId) {
+          showStatus('🔄 Switching to BSC network...', 'success');
+          
+          try {
+            await window.ethereum.request({
+              method: 'wallet_switchEthereumChain',
+              params: [{ chainId: WETO_CONFIG.chainId }],
+            });
+          } catch (switchError) {
+            if (switchError.code === 4902) {
+              // Add BSC network if not exists
+              await window.ethereum.request({
+                method: 'wallet_addEthereumChain',
+                params: [{
+                  chainId: WETO_CONFIG.chainId,
+                  chainName: WETO_CONFIG.chainName,
+                  nativeCurrency: WETO_CONFIG.nativeCurrency,
+                  rpcUrls: [WETO_CONFIG.rpcUrl],
+                  blockExplorerUrls: WETO_CONFIG.blockExplorerUrls
+                }]
+              });
+            } else {
+              throw switchError;
+            }
+          }
+        }
+
+        // Initialize Web3 and set account
+        web3 = new Web3(window.ethereum);
+        userAccount = accounts[0];
+        isConnected = true;
+
+        // Update UI and show success
+        await updateWalletUI();
+        closeModal('connectModal');
+        showStatus('✅ MetaMask connected successfully!', 'success');
+
+        // Add connection status indicator
+        const connectBtn = document.getElementById('connectBtn');
+        if (connectBtn) {
+          connectBtn.classList.add('connected');
+        }
+
       } catch (error) {
         console.error('Connection error:', error);
         let errorMsg = 'Connection failed';
@@ -1918,79 +1782,18 @@
         if (error.code === 4001) {
           errorMsg = 'Connection rejected by user';
         } else if (error.code === -32002) {
-          errorMsg = 'Connection request pending. Please check MetaMask.';
+          errorMsg = 'MetaMask is already processing. Please check MetaMask.';
+        } else if (error.message) {
+          errorMsg = error.message;
         }
         
         showStatus('❌ ' + errorMsg, 'error');
       }
     }
 
-    // Setup connection with network verification
-    async function setupConnection(account) {
-      try {
-        showStatus('🔗 Setting up connection...', 'success');
-        
-        // Initialize Web3
-        web3 = new Web3(window.ethereum);
-        userAccount = account;
-        
-        // Check network
-        const chainId = await web3.eth.getChainId();
-        if (chainId !== 56) { // BSC Mainnet
-          showStatus('🔄 Switching to BSC network...', 'success');
-          await switchToBSC();
-        }
-        
-        isConnected = true;
-        await updateWalletUI();
-        closeModal('connectModal');
-        showStatus('✅ Wallet connected successfully!', 'success');
-        
-        // Add visual feedback
-        const connectBtn = document.getElementById('connectBtn');
-        if (connectBtn) {
-          connectBtn.style.background = 'linear-gradient(135deg, #00D4AA, #4F7EFF)';
-          connectBtn.style.boxShadow = '0 0 30px rgba(0, 212, 170, 0.5)';
-        }
-        
-      } catch (error) {
-        console.error('Setup error:', error);
-        showStatus('❌ Setup failed: ' + error.message, 'error');
-      }
-    }
-
-    // Switch to BSC network
-    async function switchToBSC() {
-      try {
-        await window.ethereum.request({
-          method: 'wallet_switchEthereumChain',
-          params: [{ chainId: '0x38' }],
-        });
-      } catch (switchError) {
-        if (switchError.code === 4902) {
-          // Add BSC network
-          await window.ethereum.request({
-            method: 'wallet_addEthereumChain',
-            params: [{
-              chainId: '0x38',
-              chainName: 'BNB Smart Chain',
-              nativeCurrency: {
-                name: 'BNB',
-                symbol: 'BNB',
-                decimals: 18
-              },
-              rpcUrls: ['https://bsc-dataseed1.binance.org/'],
-              blockExplorerUrls: ['https://bscscan.com/']
-            }]
-          });
-        } else {
-          throw switchError;
-        }
-      }
-    }
-
+    // Trust Wallet Connection
     async function connectTrustWallet() {
-      // Trust Wallet uses the same interface as MetaMask
+      // Trust Wallet uses the same interface as MetaMask on desktop
       await connectMetaMask();
     }
 
@@ -2006,7 +1809,6 @@
         
         if (connectBtn) {
           connectBtn.textContent = shortAddress;
-          connectBtn.style.animation = 'connectedPulse 2s ease-in-out infinite';
         }
 
         if (walletBalance) {
@@ -2043,7 +1845,7 @@
       }
     }
 
-    // Enhanced token purchase with transaction simulation
+    // Enhanced token purchase
     async function buyWETOTokens() {
       if (!isConnected) {
         showStatus('⚠️ Please connect your wallet first!', 'error');
@@ -2068,10 +1870,9 @@
         const buyBtn = document.getElementById('buyBtn');
         const originalText = buyBtn.textContent;
         
-        // Animated loading state
-        buyBtn.innerHTML = '<span style="animation: spin 1s linear infinite;">🔄</span> Processing...';
+        // Show loading state
+        buyBtn.innerHTML = '🔄 Processing...';
         buyBtn.disabled = true;
-        buyBtn.style.background = 'linear-gradient(135deg, #FFA726, #FF6B8A)';
 
         // Check balance
         const balance = await web3.eth.getBalance(userAccount);
@@ -2087,29 +1888,39 @@
         const bonusTokens = Math.floor(wetoAmount * WETO_CONFIG.bonusPercent / 100);
         const totalTokens = wetoAmount + bonusTokens;
         
-        // Transaction simulation with progress updates
+        // Confirm transaction
+        const confirmed = confirm(`
+🔐 Confirm Transaction Details:
+
+💰 Send: ${bnbAmount} BNB
+🎯 Receive: ~${totalTokens.toLocaleString()} WETO (${wetoAmount.toLocaleString()} + ${bonusTokens.toLocaleString()} bonus)
+🏦 Network: BSC (BEP-20)
+💵 Rate: 1 WETO = ${WETO_CONFIG.tokenPrice}
+
+Click OK to proceed or Cancel to abort.
+        `);
+
+        if (!confirmed) {
+          throw new Error('Transaction cancelled by user');
+        }
+
         showStatus('📤 Preparing transaction...', 'success');
-        await simulateTransactionProgress(buyBtn);
+        await new Promise(resolve => setTimeout(resolve, 1500));
         
         showStatus('⏳ Confirming transaction...', 'success');
         await new Promise(resolve => setTimeout(resolve, 2000));
         
-        showStatus('✅ Processing purchase...', 'success');
+        // Demo transaction (replace with actual smart contract call in production)
+        showStatus('✅ Transaction confirmed! Processing purchase...', 'success');
         await new Promise(resolve => setTimeout(resolve, 1500));
         
         // Success
         showStatus(`🎉 Purchase successful! You will receive ${totalTokens.toLocaleString()} WETO tokens!`, 'success');
         
-        // Animate progress bar update
-        updateProgressBar();
-        
         // Reset form
         buyAmountInput.value = '0.1';
         calculateWETOAmount();
         closeModal('buyModal');
-        
-        // Celebrate with particle burst
-        createCelebrationParticles();
         
       } catch (error) {
         console.error('Transaction error:', error);
@@ -2118,87 +1929,6 @@
         const buyBtn = document.getElementById('buyBtn');
         buyBtn.innerHTML = 'Buy WETO Now';
         buyBtn.disabled = false;
-        buyBtn.style.background = '';
-      }
-    }
-
-    // Simulate transaction progress with visual feedback
-    async function simulateTransactionProgress(button) {
-      const steps = [
-        '🔐 Securing transaction...',
-        '📝 Creating smart contract call...',
-        '⛽ Calculating gas fees...',
-        '🔍 Validating transaction...'
-      ];
-      
-      for (let i = 0; i < steps.length; i++) {
-        button.innerHTML = steps[i];
-        await new Promise(resolve => setTimeout(resolve, 800));
-      }
-    }
-
-    // Create celebration particle effect
-    function createCelebrationParticles() {
-      const colors = ['#4F7EFF', '#FF6B8A', '#00D4AA', '#FFA726'];
-      
-      for (let i = 0; i < 50; i++) {
-        setTimeout(() => {
-          const particle = document.createElement('div');
-          particle.style.position = 'fixed';
-          particle.style.left = '50%';
-          particle.style.top = '50%';
-          particle.style.width = '8px';
-          particle.style.height = '8px';
-          particle.style.background = colors[Math.floor(Math.random() * colors.length)];
-          particle.style.borderRadius = '50%';
-          particle.style.pointerEvents = 'none';
-          particle.style.zIndex = '9999';
-          particle.style.boxShadow = `0 0 20px ${colors[Math.floor(Math.random() * colors.length)]}`;
-          
-          const angle = (Math.PI * 2 * i) / 50;
-          const velocity = 200 + Math.random() * 100;
-          const vx = Math.cos(angle) * velocity;
-          const vy = Math.sin(angle) * velocity;
-          
-          particle.animate([
-            { transform: 'translate(-50%, -50%) scale(0)', opacity: 1 },
-            { transform: `translate(calc(-50% + ${vx}px), calc(-50% + ${vy}px)) scale(1)`, opacity: 0 }
-          ], {
-            duration: 2000,
-            easing: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
-          }).onfinish = () => particle.remove();
-          
-          document.body.appendChild(particle);
-        }, i * 20);
-      }
-    }
-
-    // Update progress bar with animation
-    function updateProgressBar() {
-      const progressBar = document.getElementById('progressBar');
-      const progressText = document.getElementById('progressPercent');
-      const progressInfo = document.getElementById('progressText');
-      
-      if (progressBar) {
-        const newPercentage = Math.min(parseFloat(progressBar.style.width) + 2, 100);
-        progressBar.style.width = newPercentage + '%';
-        
-        if (progressText) {
-          progressText.textContent = newPercentage.toFixed(1) + '%';
-        }
-        
-        if (progressInfo) {
-          const sold = Math.floor((newPercentage / 100) * 80000000);
-          progressInfo.textContent = `${sold.toLocaleString()} / 80,000,000`;
-        }
-        
-        // Add celebration effect if milestone reached
-        if (newPercentage % 10 === 0) {
-          progressBar.style.animation = 'progressCelebrate 1s ease-out';
-          setTimeout(() => {
-            progressBar.style.animation = '';
-          }, 1000);
-        }
       }
     }
 
@@ -2216,29 +1946,6 @@
       statusDiv.innerHTML = message;
       document.body.appendChild(statusDiv);
 
-      // Add close button for longer messages
-      if (message.length > 50) {
-        const closeBtn = document.createElement('button');
-        closeBtn.innerHTML = '×';
-        closeBtn.style.cssText = `
-          position: absolute;
-          top: 5px;
-          right: 10px;
-          background: none;
-          border: none;
-          color: white;
-          font-size: 20px;
-          cursor: pointer;
-          opacity: 0.7;
-          transition: opacity 0.3s ease;
-        `;
-        closeBtn.onmouseover = () => closeBtn.style.opacity = '1';
-        closeBtn.onmouseout = () => closeBtn.style.opacity = '0.7';
-        closeBtn.onclick = () => statusDiv.remove();
-        statusDiv.appendChild(closeBtn);
-        statusDiv.style.paddingRight = '40px';
-      }
-
       // Auto-hide
       setTimeout(() => {
         if (statusDiv && statusDiv.parentNode) {
@@ -2250,6 +1957,16 @@
           }, 400);
         }
       }, type === 'error' ? 8000 : 5000);
+
+      // Manual close on click
+      statusDiv.onclick = () => {
+        statusDiv.classList.remove('show');
+        setTimeout(() => {
+          if (statusDiv && statusDiv.parentNode) {
+            statusDiv.remove();
+          }
+        }, 400);
+      };
     }
 
     function closeModal(modalId) {
@@ -2271,12 +1988,20 @@
       }
     }
 
-    function downloadWhitepaper() {
-      showStatus('📄 Opening WETO whitepaper...', 'success');
-      window.open('https://weto.asia/assets/pdf/weto%20whitepaper_EN.pdf', '_blank');
+    // Social Link Functions
+    function openTelegram() {
+      showStatus('📱 Opening Telegram... (Community link coming soon)', 'success');
+      // Replace with actual Telegram group link when available
+      // window.open('https://t.me/your_telegram_group', '_blank');
     }
 
-    // Enhanced countdown with smooth animations
+    function openTwitter() {
+      showStatus('🐦 Opening Twitter... (Official account coming soon)', 'success');
+      // Replace with actual Twitter link when available
+      // window.open('https://twitter.com/your_twitter_account', '_blank');
+    }
+
+    // Enhanced countdown
     function initCountdown() {
       const endDate = WETO_CONFIG.presaleEnd.getTime();
 
@@ -2315,14 +2040,13 @@
         if (element) {
           const newValue = String(value).padStart(2, '0');
           if (element.textContent !== newValue) {
-            element.style.transform = 'scale(1.2) rotateY(180deg)';
-            element.style.background = 'linear-gradient(135deg, #FF6B8A, #4F7EFF)';
-            element.style.webkitBackgroundClip = 'text';
-            element.style.webkitTextFillColor = 'transparent';
+            element.style.transform = 'scale(1.1)';
+            element.style.color = '#FF6B8A';
             
             setTimeout(() => {
               element.textContent = newValue;
-              element.style.transform = 'scale(1) rotateY(0deg)';
+              element.style.transform = 'scale(1)';
+              element.style.color = '';
             }, 150);
           }
         }
@@ -2335,16 +2059,6 @@
     // Initialize everything when DOM is ready
     document.addEventListener('DOMContentLoaded', function() {
       console.log('🚀 Premium WETO Token Sale Platform Initialized');
-      
-      // Initialize AOS with custom settings
-      AOS.init({
-        duration: 1200,
-        easing: 'ease-out-cubic',
-        once: true,
-        mirror: false,
-        offset: 100,
-        delay: 100
-      });
       
       // Initialize core systems
       createParticles();
@@ -2360,14 +2074,6 @@
       if (buyAmountInput) {
         buyAmountInput.addEventListener('input', calculateWETOAmount);
         buyAmountInput.addEventListener('change', calculateWETOAmount);
-        
-        // Add input validation and formatting
-        buyAmountInput.addEventListener('blur', function() {
-          const value = parseFloat(this.value);
-          if (value && value > 0) {
-            this.value = value.toFixed(3);
-          }
-        });
       }
 
       // Ethereum event listeners
@@ -2379,9 +2085,7 @@
             const connectBtn = document.getElementById('connectBtn');
             if (connectBtn) {
               connectBtn.textContent = 'Connect Wallet';
-              connectBtn.style.background = '';
-              connectBtn.style.boxShadow = '';
-              connectBtn.style.animation = '';
+              connectBtn.classList.remove('connected');
             }
             const walletBalance = document.getElementById('walletBalance');
             if (walletBalance) walletBalance.textContent = '0 BNB';
@@ -2394,60 +2098,30 @@
         });
 
         window.ethereum.on('chainChanged', function (chainId) {
-          if (chainId !== '0x38' && isConnected) {
+          if (chainId !== WETO_CONFIG.chainId && isConnected) {
             showStatus('⚠️ Please switch to BSC network for optimal experience', 'error');
-          } else if (chainId === '0x38' && isConnected) {
+          } else if (chainId === WETO_CONFIG.chainId && isConnected) {
             showStatus('✅ Connected to BSC network', 'success');
           }
         });
       }
 
-      // Add CSS animations dynamically
-      const style = document.createElement('style');
-      style.textContent = `
-        @keyframes spin {
-          0% { transform: rotate(0deg); }
-          100% { transform: rotate(360deg); }
-        }
-        
-        @keyframes connectedPulse {
-          0%, 100% { box-shadow: 0 0 20px rgba(0, 212, 170, 0.5); }
-          50% { box-shadow: 0 0 40px rgba(0, 212, 170, 0.8); }
-        }
-        
-        @keyframes progressCelebrate {
-          0%, 100% { transform: scaleY(1); }
-          50% { transform: scaleY(1.1); }
-        }
-      `;
-      document.head.appendChild(style);
-
       // Welcome message
       setTimeout(() => {
         showStatus('🎉 Welcome to WETO Token Sale! Connect your wallet to get started.', 'success');
       }, 2000);
-
-      // Performance monitoring
-      const perfObserver = new PerformanceObserver((list) => {
-        for (const entry of list.getEntries()) {
-          if (entry.entryType === 'measure') {
-            console.log(`⚡ ${entry.name}: ${entry.duration.toFixed(2)}ms`);
-          }
-        }
-      });
-      
-      if (typeof PerformanceObserver !== 'undefined') {
-        perfObserver.observe({entryTypes: ['measure']});
-      }
     });
 
     // Cleanup on page unload
     window.addEventListener('beforeunload', function() {
       if (countdownInterval) clearInterval(countdownInterval);
-      if (particleAnimationId) cancelAnimationFrame(particleAnimationId);
     });
 
-    // Error handling
+    // Global error handling
     window.addEventListener('error', function(event) {
       console.error('Global error:', event.error);
-      showStatus('⚠️ An unexpected error occurred. Please refresh the page.', 'error
+      showStatus('⚠️ An unexpected error occurred. Please refresh the page.', 'error');
+    });
+  </script>
+</body>
+</html>
